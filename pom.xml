@@ -12,6 +12,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <slf4j.version>1.7.22</slf4j.version>
         <junit.version>1.0.0-M2</junit.version>
         <assertj.version>3.6.1</assertj.version>
     </properties>
@@ -22,14 +24,14 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <version>${servlet-api.version}</version>
             </dependency>
 
             <!-- Logging -->
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.22</version>
+                <version>${slf4j.version}</version>
             </dependency>
 
             <!-- Test -->
