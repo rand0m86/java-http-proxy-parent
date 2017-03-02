@@ -13,9 +13,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <servlet-api.version>3.1.0</servlet-api.version>
-        <slf4j.version>1.7.22</slf4j.version>
-        <junit.version>1.0.0-M2</junit.version>
-        <assertj.version>3.6.1</assertj.version>
+        <slf4j.version>1.7.24</slf4j.version>
+        <junit.version>5.0.0-M3</junit.version>
+        <junit-platform-runner.version>1.0.0-M2</junit-platform-runner.version>
+        <mockito-core.version>2.7.13</mockito-core.version>
+        <assertj.version>3.6.2</assertj.version>
     </properties>
 
     <dependencyManagement>
@@ -36,9 +38,21 @@
 
             <!-- Test -->
             <dependency>
-                <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-engine</artifactId>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
                 <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-runner</artifactId>
+                <version>${junit-platform-runner.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
