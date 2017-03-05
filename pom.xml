@@ -16,6 +16,7 @@
         <slf4j.version>1.7.24</slf4j.version>
         <junit.version>5.0.0-M3</junit.version>
         <junit-platform-runner.version>1.0.0-M2</junit-platform-runner.version>
+        <junit.surefire-provider.version>1.0.0-M3</junit.surefire-provider.version>
         <mockito-core.version>2.7.13</mockito-core.version>
         <assertj.version>3.6.2</assertj.version>
     </properties>
@@ -63,5 +64,27 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Make JUnit 5 tests runnable under Maven -->
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit.surefire-provider.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
